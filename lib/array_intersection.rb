@@ -6,19 +6,12 @@ def intersection(array1, array2)
   if array1 == nil || array2 == nil
     return []
   end
-  if array1.length < array2.length
-    larger = array2
-    smaller = array1
-  else
-    larger = array1
-    smaller = array2
-  end
   my_hash = Hash.new()
-  smaller.each do |num|
+  array1.each do |num|
     my_hash[num] = 1
   end
   common_elements = []
-  larger.each do |num_1|
+  array2.each do |num_1|
     if my_hash.include? num_1
       common_elements << num_1
     end
